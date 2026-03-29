@@ -16,3 +16,14 @@ texture = ExtResource("1_dovo2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(466, 503)
 shape = SubResource("CircleShape2D_dovo2")
+
+[node name="GunReloadTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="GrenadeReloadTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="GunReloadTimer" to="." method="_on_gun_reload_timer_timeout"]
+[connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
